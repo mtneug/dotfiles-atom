@@ -1,0 +1,544 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.text.tex.latex':
+  # preamble and package/class file
+  "RequirePackage":
+    "prefix": "Pkg"
+    "body": "\\\\RequirePackage$2{${1:package name}}$0"
+  "usepackage":
+    "prefix": "pkg"
+    "body": "\\\\usepackage$2{${1:package name}}$0"
+
+  # document level
+  'part':
+    'prefix': 'part'
+    'body': '\\\\part{${1:part name}}\n$0'
+  'chapter':
+    'prefix': 'chapter'
+    'body': '\\\\chapter{${1:chapter name}}\n$0'
+  'section':
+    'prefix': 'section'
+    'body': '\\\\section{${1:section name}}\n$0'
+  'subsection':
+    'prefix': 'subsection'
+    'body': '\\\\subsection{${1:subsection name}}\n$0'
+  'subsubsection':
+    'prefix': 'subsubsection'
+    'body': '\\\\subsubsection{${1:subsubsection name}}\n$0'
+  'paragraph':
+    'prefix': 'paragraph'
+    'body': '\\\\paragraph{${1:paragraph name}}\n$0'
+  'subparagraph':
+    'prefix': 'subparagraph'
+    'body': '\\\\subparagraph{${1:subparagraph name}}\n$0'
+
+  # Text
+  'textit ':
+    'prefix': 'it'
+    'body': '\\\\textit{$1} $0'
+  'textit':
+    'prefix': 'textit'
+    'body': '\\\\textit{$1} $0'
+  'textsc ':
+    'prefix': 'sc'
+    'body': '\\\\textsc{$1} $0'
+  'textsc':
+    'prefix': 'textsc'
+    'body': '\\\\textsc{$1} $0'
+  'texttt ':
+    'prefix': 'tt'
+    'body': '\\\\texttt{$1} $0'
+  'texttt':
+    'prefix': 'texttt'
+    'body': '\\\\texttt{$1} $0'
+  'textbf ':
+    'prefix': 'bf'
+    'body': '\\\\textbf{$1} $0'
+  'textbf':
+    'prefix': 'textbf'
+    'body': '\\\\textbf{$1} $0'
+  'textbb ':
+    'prefix': 'bb'
+    'body': '\\\\textbb{$1} $0'
+  'textbb':
+    'prefix': 'textbb'
+    'body': '\\\\textbb{$1} $0'
+  'textrm ':
+    'prefix': 'rm'
+    'body': '\\\\textrm{$1} $0'
+  'textrm':
+    'prefix': 'textrm'
+    'body': '\\\\mathrm{$1} $0'
+  'textsf ':
+    'prefix': 'sf'
+    'body': '\\\\textsf{$1} $0'
+  'textsf':
+    'prefix': 'textsf'
+    'body': '\\\\textsf{$1} $0'
+  'textcal ':
+    'prefix': 'cal'
+    'body': '\\\\textcal{$1} $0'
+  'textcal':
+    'prefix': 'textcal'
+    'body': '\\\\textcal{$1} $0'
+  'text':
+    'prefix': 'text'
+    'body': '\\\\text{$1} $0'
+  'todo':
+    'prefix': 'todo'
+    'body': '\\\\todo{$1} $0'
+  'include':
+    'prefix': 'include'
+    'body': '\\\\include{$1} $0'
+  'input':
+    'prefix': 'input'
+    'body': '\\\\input{$1} $0'
+  'citep':
+    'prefix': 'citep'
+    'body': '\\\\citep[$1][$2]{$3} $0'
+  'ref':
+    'prefix': 'ref'
+    'body': '\\\\ref{$1} $0'
+  'label':
+    'prefix': 'label'
+    'body': '\\\\label{$1} $0'
+  'emph':
+    'prefix': 'emph'
+    'body': '\\\\emph{$1} $0'
+
+  # environment
+  '\\begin{}...\\end{}':
+    'prefix': 'begin'
+    'body': '\\\\begin{${1:env}}$2\n\t$0\n\\\\end{${1:env}}'
+  'align(*)':
+    'prefix': 'align'
+    'body': '\\\\begin{align$1}\n\t$0\n\\\\end{align$1}'
+  'description':
+    'prefix': 'description'
+    'body': '\\\\begin{description}\n\t\\\\item[$1]$0\n\\\\end{description}'
+  'enumerate':
+    'prefix': 'enumerate'
+    'body': '\\\\begin{enumerate}\n\t\\\\item $0\n\\\\end{enumerate}'
+  'equation(*)':
+    'prefix': 'equation'
+    'body': '\\\\begin{equation$1}\n\t$0\n\\\\end{equation$1}'
+  'figure':
+    'prefix': 'figure'
+    'body': '\\\\begin{figure}\n\t\\\\includegraphics$2{${1:/path/to/figure}}\n\t\\\\caption{$3}\n\t\\\\label{$4}\n\\\\end{figure}'
+  'gather(*)':
+    'prefix': 'gather'
+    'body': '\\\\begin{gather$1}\n\t$0\n\\\\end{gather$1}'
+  'itemize':
+    'prefix': 'itemize'
+    'body': '\\\\begin{itemize}\n\t\\\\item $0\n\\\\end{itemize}'
+  'table':
+    'prefix': 'table'
+    'body': '\\\\begin{table}\n\t\\\\caption{$1}\n\t\\\\label{$3}\n\t$2\n\\\\end{table}'
+  'tabular':
+    'prefix': 'tabular'
+    'body': '\\\\begin{tabular}{${1:column alignment}}\n\t$0\n\\\\end{tabular}'
+
+  # element
+  'inline math - $$':
+    'prefix': 'inline'
+    'body': '$$1$$0'
+
+
+# math, taken from  https://github.com/SublimeText/LaTeXTools/blob/master/LaTeX%20math.sublime-completions
+'.text.tex.latex .string.other.math':
+  'math italic':
+    'prefix': 'it'
+    'body': '\\\\mathit{$1}$0'
+  'math boldface':
+    'prefix': 'bf'
+    'body': '\\\\mathbf{$1}$0'
+  'math blackboard':
+    'prefix': 'bb'
+    'body': '\\\\mathbb{$1}$0'
+  'math roman':
+    'prefix': 'rm'
+    'body': '\\\\mathrm{$1}$0'
+  'math sans-serif':
+    'prefix': 'sf'
+    'body': '\\\\mathsf{$1}$0'
+  'math calligraphy':
+    'prefix': 'cal'
+    'body': '\\\\mathcal{$1}$0'
+  'fraction':
+    'prefix': 'frac'
+    'body': '\\\\frac{$1}{$2}$0'
+  'aligned':
+    'prefix': 'aligned'
+    'body': '\\\\begin{aligned}$1\n\t$0\n\\\\end{aligned}'
+  'gathered':
+    'prefix': 'gathered'
+    'body': '\\\\begin{gathered}$1\n\t$0\n\\\\end{gathered}'
+  'matrix':
+    'prefix': 'matrix'
+    'body': '\\\\begin{$1matrix$2}$3\n\t$0\n\\\\end{$1matrix$2}'
+
+  # Math, taken from  https://github.com/SublimeText/LaTeXTools/blob/master/LaTeX%20math.sublime-completions
+  'alpha':
+    'prefix': 'alpha'
+    'body': '\\\\alpha'
+  'beta':
+    'prefix': 'beta'
+    'body': '\\\\beta'
+  'gamma':
+    'prefix': 'gamma'
+    'body': '\\\\gamma'
+  'delta':
+    'prefix': 'ddelta'
+    'body': '\\\\delta'
+  'partial':
+    'prefix': 'partial'
+    'body': '\\\\partial'
+  'epsilon':
+    'prefix': 'epsilon'
+    'body': '\\\\epsilon'
+  'varepsilon':
+    'prefix': 'varepsilon'
+    'body': '\\\\varepsilon'
+  'zeta':
+    'prefix': 'zeta'
+    'body': '\\\\zeta'
+  'eta':
+    'prefix': 'eta'
+    'body': '\\\\eta'
+  'theta':
+    'prefix': 'theta'
+    'body': '\\\\theta'
+  'vartheta':
+    'prefix': 'vartheta'
+    'body': '\\\\vartheta'
+  'iota':
+    'prefix': 'iota'
+    'body': '\\\\iota'
+  'kappa':
+    'prefix': 'kappa'
+    'body': '\\\\kappa'
+  'lambda':
+    'prefix': 'lambda'
+    'body': '\\\\lambda'
+  'mu':
+    'prefix': 'mu'
+    'body': '\\\\mu'
+  'nu':
+    'prefix': 'nu'
+    'body': '\\\\nu'
+  'xi':
+    'prefix': 'xi'
+    'body': '\\\\xi'
+  'pi':
+    'prefix': 'pi'
+    'body': '\\\\pi'
+  'rho':
+    'prefix': 'rho'
+    'body': '\\\\rho'
+  'sigma':
+    'prefix': 'sigma'
+    'body': '\\\\sigma'
+  'tau':
+    'prefix': 'tau'
+    'body': '\\\\tau'
+  'upsilon':
+    'prefix': 'upsilon'
+    'body': '\\\\upsilon'
+  'phi':
+    'prefix': 'phi'
+    'body': '\\\\phi'
+  'varphi':
+    'prefix': 'varphi'
+    'body': '\\\\varphi'
+  'chi':
+    'prefix': 'chi'
+    'body': '\\\\chi'
+  'psi':
+    'prefix': 'psi'
+    'body': '\\\\psi'
+  'omega':
+    'prefix': 'omega'
+    'body': '\\\\omega'
+  'digamma':
+    'prefix': 'digamma'
+    'body': '\\\\digamma'
+  'Gamma':
+    'prefix': 'Gamma'
+    'body': '\\\\Gamma'
+  'Delta':
+    'prefix': 'Delta'
+    'body': '\\\\Delta'
+  'Theta':
+    'prefix': 'Theta'
+    'body': '\\\\Theta'
+  'Lambda':
+    'prefix': 'Lambda'
+    'body': '\\\\Lambda'
+  'Xi':
+    'prefix': 'Xi'
+    'body': '\\\\Xi'
+  'Pi':
+    'prefix': 'Pi'
+    'body': '\\\\Pi'
+  'Sigma':
+    'prefix': 'Sigma'
+    'body': '\\\\Sigma'
+  'Phi':
+    'prefix': 'Phi'
+    'body': '\\\\Phi'
+  'Psi':
+    'prefix': 'Psi'
+    'body': '\\\\Psi'
+  'Omega':
+    'prefix': 'Omega'
+    'body': '\\\\Omega'
+  'emptyset ':
+    'prefix': '0'
+    'body': '\\\\emptyset'
+  'emptyset':
+    'prefix': 'emptyset'
+    'body': '\\\\emptyset'
+  'forall':
+    'prefix': 'forall'
+    'body': '\\\\forall'
+  'exists':
+    'prefix': 'exists'
+    'body': '\\\\exists'
+  'setminus':
+    'prefix': 'setminus'
+    'body': '\\\\setminus'
+  'ldots':
+    'prefix': 'ldots'
+    'body': '\\\\ldots'
+  'cdot':
+    'prefix': 'cdot'
+    'body': '\\\\cdot'
+  'cdots':
+    'prefix': 'cdots'
+    'body': '\\\\cdots'
+  'langle':
+    'prefix': 'langle'
+    'body': '\\\\langle'
+  'rangle':
+    'prefix': 'rangle'
+    'body': '\\\\rangle'
+  'cup':
+    'prefix': 'cup'
+    'body': '\\\\cup'
+  'cap':
+    'prefix': 'cap'
+    'body': '\\\\cap'
+  'bigcup':
+    'prefix': 'bigcup'
+    'body': '\\\\bigcup'
+  'bigcap':
+    'prefix': 'bigcap'
+    'body': '\\\\bigcap'
+  'infty':
+    'prefix': 'infty'
+    'body': '\\\\infty'
+  'int':
+    'prefix': 'int'
+    'body': '\\\\int_{$1}^{$2} $0'
+  'sum':
+    'prefix': 'sum'
+    'body': '\\\\sum_{$1}^{$2} $0'
+  'prod':
+    'prefix': 'prod'
+    'body': '\\\\prod_{$1}^{$2} $0'
+  'sup':
+    'prefix': 'sup'
+    'body': '\\\\sup'
+  'succ':
+    'prefix': 'succ'
+    'body': '\\\\succ'
+  'succeq':
+    'prefix': 'succeq'
+    'body': '\\\\succeq'
+  'succcurlyeq':
+    'prefix': 'succcurlyeq'
+    'body': '\\\\succcurlyeq'
+  'quad':
+    'prefix': 'quad'
+    'body': '\\\\quad'
+  'qquad':
+    'prefix': 'qquad'
+    'body': '\\\\qquad'
+  'qqquad':
+    'prefix': 'qqquad'
+    'body': '\\\\qqquad'
+  'prec':
+    'prefix': 'prec'
+    'body': '\\\\prec'
+  'preceq':
+    'prefix': 'preceq'
+    'body': '\\\\preceq'
+  'preccurlyeq':
+    'prefix': 'preccurlyeq'
+    'body': '\\\\preccurlyeq'
+  'leftarrow':
+    'prefix': 'leftarrow'
+    'body': '\\\\leftarrow'
+  'longleftarrow':
+    'prefix': 'longleftarrow'
+    'body': '\\\\longleftarrow'
+  'Leftarrow':
+    'prefix': 'Leftarrow'
+    'body': '\\\\Leftarrow'
+  'Longleftarrow':
+    'prefix': 'Longleftarrow'
+    'body': '\\\\Longleftarrow'
+  'rightarrow':
+    'prefix': 'rightarrow'
+    'body': '\\\\rightarrow'
+  'longrightarrow':
+    'prefix': 'longrightarrow'
+    'body': '\\\\longrightarrow'
+  'Rightarrow':
+    'prefix': 'Rightarrow'
+    'body': '\\\\Rightarrow'
+  'Longrightarrow':
+    'prefix': 'Longrightarrow'
+    'body': '\\\\Longrightarrow'
+  'leftrightarrow':
+    'prefix': 'leftrightarrow'
+    'body': '\\\\leftrightarrow'
+  'Leftrightarrow':
+    'prefix': 'Lr'
+    'body': '\\\\Leftrightarrow'
+  'Longleftrightarrow':
+    'prefix': 'Longleftrightarrow'
+    'body': '\\\\Longleftrightarrow'
+  'uparrow':
+    'prefix': 'uparrow'
+    'body': '\\\\uparrow'
+  'downarrow':
+    'prefix': 'downarrow'
+    'body': '\\\\downarrow'
+  'mathit ':
+    'prefix': 'mit'
+    'body': '\\\\mathit{$1} $0'
+  'mathit':
+    'prefix': 'mathit'
+    'body': '\\\\mathit{$1} $0'
+  'mathbf ':
+    'prefix': 'mbf'
+    'body': '\\\\mathbf{$1} $0'
+  'mathbf':
+    'prefix': 'mathbf'
+    'body': '\\\\mathbf{$1} $0'
+  'mathbb ':
+    'prefix': 'mbb'
+    'body': '\\\\mathbb{$1} $0'
+  'mathbb':
+    'prefix': 'mathbb'
+    'body': '\\\\mathbb{$1} $0'
+  'mathrm ':
+    'prefix': 'mrm'
+    'body': '\\\\mathrm{$1} $0'
+  'mathrm':
+    'prefix': 'mathrm'
+    'body': '\\\\mathrm{$1} $0'
+  'mathsf ':
+    'prefix': 'msf'
+    'body': '\\\\mathsf{$1} $0'
+  'mathsf':
+    'prefix': 'mathsf'
+    'body': '\\\\mathsf{$1} $0'
+  'mathcal ':
+    'prefix': 'mcal'
+    'body': '\\\\mathcal{$1} $0'
+  'mathcal':
+    'prefix': 'mathcal'
+    'body': '\\\\mathcal{$1} $0'
+  'left( right)':
+    'prefix': 'lrp'
+    'body': '\\\\left( $1 \\\\right) $0'
+  'left[ right]':
+    'prefix': 'lrb'
+    'body': '\\\\left[ $1 \\\\right] $0'
+  'left{ right}':
+    'prefix': 'lrbr'
+    'body': '\\\\left\\\\\\\\{ $1 \\\\right\\\\\\\\} $0'
+  'frac{}{}':
+    'prefix': 'frac'
+    'body': '\\\\frac{$1}{$2} $0'
+  'stackrel{}{}':
+    'prefix': 'stackrel'
+    'body': '\\\\stackrel{$1}{$2} $0'
+  'split env':
+    'prefix': 'split'
+    'body': '\\\\begin{split}\n\t$0\n\\\\end{split}'
+  'leq':
+    'prefix': 'leq'
+    'body': '\\\\leq $1'
+  'geq':
+    'prefix': 'geq'
+    'body': '\\\\geq $1'
+  'neq':
+    'prefix': 'neq'
+    'body': '\\\\neq $1'
+  'hat':
+    'prefix': 'hat'
+    'body': '\\\\hat{$1} $0'
+  'sqrt':
+    'prefix': 'sqrt'
+    'body': '\\\\sqrt{$1} $0'
+  'sim':
+    'prefix': 'sim'
+    'body': '\\\\sim $0'
+  'overset':
+    'prefix': 'overset'
+    'body': '\\\\overset{$1}{$2} $0'
+  'underset':
+    'prefix': 'underset'
+    'body': '\\\\underset{$1}{$2} $0'
+  'overline':
+    'prefix': 'overline'
+    'body': '\\\\overline{$1} $0'
+  'underline':
+    'prefix': 'underline'
+    'body': '\\\\underline{$1} $0'
+  'boldsymbol':
+    'prefix': 'boldsymbol'
+    'body': '\\\\boldsymbol{$1} $0'
+  'boldsymbol ':
+    'prefix': 'bold'
+    'body': '\\\\boldsymbol{$1} $0'
+
+
+# Beamer
+'.text.tex.latex.beamer':
+  'Frame':
+    'prefix': 'frame'
+    'body': '\\\\begin{frame}[t]{${1:title}}\n\t${2:body}\n\\\\end{frame}\n%--- Next Frame ---%'
+  'Columns':
+    'prefix': 'cols'
+    'body': '\\\\begin{columns}\n\\\\begin{column}[T]{$1cm}\n$3\n\\\\end{column}\n\\\\hfill\n\\\\begin{column}[T]{$2cm}\n\n\\\\end{column}\n\\\\end{columns}\n'
+
+
+# other
+'.text.tex.latex .meta.function.environment.list':
+  '\\\\item[description]':
+    'prefix': 'itd'
+    'body': '\\\\item[${1:description}] ${0:item}'
