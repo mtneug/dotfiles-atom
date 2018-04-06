@@ -1,7 +1,8 @@
 "*":
   Zen:
     fullscreen: false
-    width: 100
+    minimap: true
+    softWrap: true
   "atom-alignment":
     addSpacePostfix: true
   "atom-focus-mode":
@@ -21,7 +22,7 @@
   "autocomplete-python":
     useKite: false
   "autoupdate-packages":
-    lastUpdateTimestamp: 1522828248508
+    lastUpdateTimestamp: 1523002689473
   "bracket-matcher":
     highlightMatchingLineNumber: true
   "command-palette": {}
@@ -47,12 +48,12 @@
     telemetryConsent: "no"
     themes: [
       "nord-atom-ui"
-      "nord-atom-syntax"
+      "pen-paper-coffee-syntax"
     ]
     titleBar: "hidden"
     warnOnLargeFileLimit: 2
   editor:
-    fontFamily: "Knack Nerd Font Mono"
+    fontFamily: "Hack Nerd Font Mono"
     fontSize: 15
     maxScreenLineLength: 99999
     preferredLineLength: 120
@@ -84,6 +85,36 @@
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        black: "#3b4252"
+        blue: "#81a1c1"
+        cyan: "#88c0d0"
+        green: "#a3be8c"
+        magenta: "#b48ead"
+        red: "#bf616a"
+        white: "#e5e9f0"
+        yellow: "#ebcb8b"
+      zBright:
+        brightBlack: "#4c566a"
+        brightBlue: "#81a1c1"
+        brightCyan: "#8fbcbb"
+        brightGreen: "#a3be8c"
+        brightMagenta: "#b48ead"
+        brightRed: "#bf616a"
+        brightWhite: "#eceff4"
+        brightYellow: "#ebcb8b"
+    core:
+      scrollback: 999999
+    style:
+      animationSpeed: 100
+      defaultPanelHeight: "50%"
+      fontSize: "13"
+    toggles:
+      autoClose: true
+      cursorBlink: false
+      runInsertedText: false
   "status-bar": {}
   "symbols-view": {}
   tabs:
@@ -91,7 +122,7 @@
     enableMruTabSwitching: false
     enableVcsColoring: true
   "tree-view":
-    autoReveal: true
+    focusOnReveal: false
     hideIgnoredNames: true
     squashDirectoryNames: true
   welcome:
