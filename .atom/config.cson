@@ -1,7 +1,6 @@
 "*":
   Zen:
     fullscreen: false
-    minimap: true
     softWrap: true
   "atom-alignment":
     addSpacePostfix: true
@@ -22,7 +21,7 @@
   "autocomplete-python":
     useKite: false
   "autoupdate-packages":
-    lastUpdateTimestamp: 1523002689473
+    lastUpdateTimestamp: 1523024289711
   "bracket-matcher":
     highlightMatchingLineNumber: true
   "command-palette": {}
